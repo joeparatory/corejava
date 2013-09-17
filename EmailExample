@@ -1,0 +1,129 @@
+/* 
+ * 
+ * 			Validate email ID
+ * 1. Email should only have one '@' AND '.'
+ * 2. There should be at least 4 chars before '@'
+ * 3. There should be at least 3 chars between '@' and '.'
+ * 4. There should be at least 2 chars after '.'
+ * 
+ */
+
+public class EmailExample {
+
+	public void countAtSymbol(String email) {
+
+		int counter = 0;
+
+		for (int i = 0; i < email.length(); i++) {
+
+			if (email.charAt(i) == '@') {
+
+				counter += 1;
+
+				if (counter > 1) {
+
+					System.out.println("There are " + counter + " @ symbols");
+					System.out.println("Invalid email");
+					break;
+				}
+			}
+		}
+		if (counter == 1) {
+			System.out.println("There is " + counter + " @ symbol");
+		}
+	}
+
+	public void countDotSymbol(String email) {
+
+		int counter1 = 0;
+
+		for (int i = 0; i < email.length(); i++) {
+
+			if (email.charAt(i) == '.') {
+
+				counter1 += 1;
+
+				if (counter1 > 1) {
+
+					System.out.println("There are " + counter1 + " . symbols");
+					System.out.println("Invalid email");
+					break;
+
+				}
+			}
+		}
+		if (counter1 == 1) {
+			System.out.println("There is " + counter1 + " . symbol");
+		}
+	}
+
+	public void userNameLength(String email) {
+
+		if (email.indexOf('@') < 4) {
+
+			System.out.println("There must be four spaces before @");
+
+		} else {
+
+			System.out.println("There are at least four spaces before @");
+
+		}
+
+	}
+
+	public void hostNameLength(String email) {
+
+		if ((email.substring(email.indexOf('@'), email.indexOf('.')).length() < 4)) {
+
+			System.out
+					.println("There must be at least three chars between @ and .");
+
+		} else {
+
+			System.out
+					.println("There are at least three chars between @ and .");
+
+		}
+
+	}
+
+	public void domainNameLength(String email) {
+
+		if ((email.substring(email.indexOf('.') + 1, email.length() - 1)
+				.length()) < 1) {
+
+			System.out.println("There must be more than 2 chars after .");
+
+		} else {
+			System.out.println("There are at least 2 chars after .");
+
+		}
+	}
+
+	public static void main(String[] args) {
+
+		String email = "polo@aol.in";
+		// String email = "pol@ao..n";
+
+		EmailExample ee = new EmailExample();
+
+		ee.countAtSymbol(email);
+		ee.countDotSymbol(email);
+		ee.userNameLength(email);
+		ee.hostNameLength(email);
+		ee.domainNameLength(email);
+		
+		
+		/*
+		 * if(idxAt == email.lastIndexOf('@') && idxDot ==
+		 * email.lastIndexOf('.') && indxAt > 4 && (idxDot - idxAt) > 3 && len >
+		 * (idxDot + 2)) 
+		 * 
+		 * System.out.println("Invalid Email ID");
+		 *  
+		 * else
+		 * System.out.println("Invalid Email ID");
+		 */
+
+	}
+}
