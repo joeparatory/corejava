@@ -1,0 +1,33 @@
+/*
+ * 
+ * The first part of this program demonstrates that the main method runs on a thread of its own.
+ * It does this by using the currentThread() method as well as the getName() method. 
+ * Secondly, the program prints multi-dimensional arrays.
+ * 
+ */
+
+public class MultidimensionalArrays {
+
+	public static void main(String[] args) {
+
+		String tname = Thread.currentThread().getName();
+		System.out.println(tname);
+
+		int[][] multi = {
+
+		{ 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11, 12 }
+
+		};
+
+		for (int i = 0; i < multi.length; i++) {
+
+			for (int j = 0; j < multi[i].length; j++) {
+
+				System.out.print(multi[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+	}
+
+}
