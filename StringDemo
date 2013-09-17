@@ -1,0 +1,109 @@
+public class StringDemo {
+
+	public static void main(String[] args) {
+
+		String s1 = new String("Hello");
+		String s2 = "Hello";
+		String s3 = "Hello";
+
+		// Comparing References
+		System.out.println(s1 == s2);
+		System.out.println(s2 == s3);
+		System.out.println();
+
+		// Comparing values
+		System.out.println(s1.equals(s2));
+		System.out.println(s2.equals(s3));
+		System.out.println();
+
+		s1 = s1 + "World";
+		System.out.println(s1);
+		System.out.println(s1.length());
+		System.out.println(s1.toUpperCase());
+		System.out.println(s1.toLowerCase());
+		System.out.println();
+
+		System.out.println(s1.substring(3));
+		System.out.println(s1.substring(3, 5));
+		System.out.println(s1.replace('e', 'a'));
+		System.out.println();
+
+		System.out.println(s1.indexOf('o'));
+		System.out.println(s1.lastIndexOf('o'));
+		System.out.println(s1.charAt(5));
+		System.out.println();
+
+		// Print index of all 'l' in string
+		System.out.println(s1.indexOf('l'));
+		System.out.println(s1.indexOf('l', (s1.indexOf('l')) + 1));
+		System.out.println(s1.indexOf('l', ((s1.indexOf('l')) + 1) + 1));
+		System.out.println();
+
+		// Validate email ID
+		// 1.Email should only have one '@' AND '.'
+		// 2. There should be at least 4 chars before '@'
+		// 3. There should be at least 3 chars between '@' and '.'
+		// 4. There should be at least 2 chars after '.'
+
+		int counter = 0;
+
+		String email = "polo@aol.in";
+
+		for (int i = 0; i < email.length(); i++) {
+
+			if (i == '@') {
+
+				counter++;
+
+				if (counter > 1) {
+
+					System.out.println("Invalid email");
+
+				}
+
+			}
+
+			if (i == '.') {
+
+				counter++;
+
+				if (counter > 1) {
+
+					System.out.println("Invalid email");
+
+				}
+
+			}
+
+		}
+		if (email.indexOf('@') < 4) {
+
+			System.out.println("There must be four spaces before @");
+
+		} else {
+
+			System.out.println("There are at least four spaces before @");
+		}
+
+		if ((email.substring(email.indexOf('@'), email.indexOf('.')).length() < 3)) {
+
+			System.out
+					.println("There must be at least three chars between @ and .");
+
+		} else {
+
+			System.out
+					.println("There are at least three chars between @ and .");
+
+		}
+
+		if ((email.substring(email.indexOf('.'), email.length()).length() < 2)) {
+
+			System.out.println("There must be more than 2 chars after .");
+
+		} else {
+			System.out.println("There are at least 2 chars after .");
+		}
+
+	}
+}
