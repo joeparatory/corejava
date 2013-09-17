@@ -1,0 +1,35 @@
+/*
+ * This class is meant to demonstrate the use of the Object class to generically set the
+ * type of object in the constructor.
+ * 
+ * The two objects created here are Integer and String.
+ */
+
+public class Demo {
+
+	private Object data;
+
+	public Demo(Object data) {
+		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return data.toString();
+	}
+
+	public static void main(String[] args) {
+		Demo d1 = new Demo("Test");
+		d1.setData(500);
+		System.out.println(d1);
+
+		Demo d2 = new Demo(1000);
+		d2.setData("Hello");
+		System.out.println(d2);
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+
+}
