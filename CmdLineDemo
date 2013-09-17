@@ -1,0 +1,28 @@
+/*
+ * This program is meant to read the command line arguments of a Java program.
+ * 
+ * The second part of this program is meant to demonstrate the split() method
+ * using a days of the week string and converting it to an array and
+ * subsequently printing it.
+ */
+
+
+public class CmdLineDemo {
+
+	public static void main(String[] args) {
+
+		for (int i = 0; i < args.length; i++) {
+
+			System.out.println(args[i]);
+
+		}
+
+		String days = "Sun-Mon-Tue-Wed-Thu-Fri-Sat";
+		String[] week = days.split("-");
+		for (int i = 0; i < week.length; i++) {
+			System.out.println(week[i]);
+		}
+
+	}
+
+}
