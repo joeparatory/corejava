@@ -1,0 +1,33 @@
+/*
+ * 
+ * This class demostrates the use of Generics in core Java.  <Z> holds the place
+ * for the object type to be declared later.
+ * 
+ */
+
+public class GenDemo<Z> {
+	// Generics
+	private Z data;
+
+	public GenDemo(Z data) {
+		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return data.toString();
+	}
+
+	public void setData(Z data) {
+		this.data = data;
+	}
+
+	public static void main(String[] args) {
+		GenDemo<String> d1 = new GenDemo<String>("Hello");
+		System.out.println(d1);
+
+		GenDemo<Integer> d2 = new GenDemo<Integer>(500);
+		System.out.println(d2);
+	}
+
+}
